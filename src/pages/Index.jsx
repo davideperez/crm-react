@@ -8,36 +8,36 @@ export const loader = () => {
         id: 1,
         name: 'David',
         phone: 102013313,
-        email: "david@david.com",
-        company: 'Coding with David'
+        email: "david@facebook.com",
+        company: 'Facebook'
     },
     {
         id: 2,
         name: 'Karen',
         phone: 138198313,
-        email: "karen@david.com",
-        company: 'Coding with David'
+        email: "karen@google.com",
+        company: 'Google'
     },
     {
         id: 3,
         name: 'Joshua',
         phone: 31983913,
-        email: "joshua@david.com",
-        company: 'Coding with David'
+        email: "joshua@x.com",
+        company: 'X'
     },
     {
         id: 4,
         name: 'Michael',
         phone: 319381983,
-        email: "michael@david.com",
-        company: 'Coding with David'
+        email: "michael@linkedin.com",
+        company: 'Linked-in'
     },
     {
         id: 5,
         name: 'Peter',
         phone: 1398198938,
-        email: "peter@david.com",
-        company: 'Coding with David'
+        email: "peter@owasp.com",
+        company: 'OWASP'
     },
 ];
 
