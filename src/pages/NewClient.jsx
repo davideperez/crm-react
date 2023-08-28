@@ -8,11 +8,21 @@ export async function action({request}) {
 
     const data = Object.fromEntries(formData)
 
+    const email = formData.get('email')
 
-    //Validation
+    
+    //Validates if all the fields are complete.
     const errors = []
     if(Object.values(data).includes('')) {
         errors.push('All fields are mandatory.')
+    }
+    
+    //Validates email
+    
+    let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+
+    if(!regex.test(email)) {
+        errors.push('Email not valid.')
     }
 
     // Return data if there are errors:
@@ -46,6 +56,7 @@ const NewClient = () => {
                 {errors?.length && errors.map((error, i ) => <Error key={i}>{error}</Error> )}
                 <Form 
                     method="POST"
+                    noValidate 
                 >
                     <AddClientForm
                         //client={client}
