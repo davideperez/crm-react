@@ -1,42 +1,43 @@
 import { useLoaderData } from "react-router-dom"
+import Client from "../components/Client";
 
 export const loader = () => {
   
   const clients = [
     {
         id: 1,
-        nombre: 'Juan',
-        telefono: 102013313,
-        email: "juan@juan.com",
-        empresa: 'Codigo Con Juan'
+        name: 'David',
+        phone: 102013313,
+        email: "david@david.com",
+        company: 'Coding with David'
     },
     {
         id: 2,
-        nombre: 'Karen',
-        telefono: 138198313,
-        email: "karen@juan.com",
-        empresa: 'Codigo Con Juan'
+        name: 'Karen',
+        phone: 138198313,
+        email: "karen@david.com",
+        company: 'Coding with David'
     },
     {
         id: 3,
-        nombre: 'Josue',
-        telefono: 31983913,
-        email: "josue@juan.com",
-        empresa: 'Codigo Con Juan'
+        name: 'Joshua',
+        phone: 31983913,
+        email: "joshua@david.com",
+        company: 'Coding with David'
     },
     {
         id: 4,
-        nombre: 'Miguel',
-        telefono: 319381983,
-        email: "miguel@juan.com",
-        empresa: 'Codigo Con Juan'
+        name: 'Michael',
+        phone: 319381983,
+        email: "michael@david.com",
+        company: 'Coding with David'
     },
     {
         id: 5,
-        nombre: 'Pedro',
-        telefono: 1398198938,
-        email: "pedro@juan.com",
-        empresa: 'Codigo Con Juan'
+        name: 'Peter',
+        phone: 1398198938,
+        email: "peter@david.com",
+        company: 'Coding with David'
     },
 ];
 
@@ -46,14 +47,34 @@ export const loader = () => {
 
 const Index = () => {
 
-  const data = useLoaderData()
-
-  console.log(data)
+  const clients = useLoaderData()
 
   return (
     <>
       <h1 className="font-black text-4xl text-blue-900">Clients</h1>
       <p className="mt-3 ">Manage your clients.</p>
+
+      {clients.length ? (
+        <table className="w-full bg-white shadow mt-5 table-auto">
+          <thead className="bg-blue-800  text-white ">
+            <tr>
+              <th className="p-2">Client</th>
+              <th className="p-2">Contact</th>
+              <th className="p-2">Actions</th>
+            </tr>
+          </thead>
+            <tbody>
+              { clients.map( client => (
+                <Client
+                  client={client}
+                  key={client.id}
+                />
+              ))}
+            </tbody>
+        </table>
+      ): (
+        <p className="text-center mt-10"> There is no clients.</p>
+      )}
     </>
     )
 }
