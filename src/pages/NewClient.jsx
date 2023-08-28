@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-
+import Form from '../components/Form'
 
 const NewClient = () => {
 
@@ -12,14 +12,25 @@ const NewClient = () => {
 
             <div className="flex - justify-end">
                 <button
-                    className="bg-blue-800 text-white px-3 py-1 font-bold uppercase"
+                    className="bg-blue-800 text-white px-3 py-1 font-bold uppercase"    
                     onClick={() => navigate(-1)}
                 >
                     Back
                 </button>
             </div>
-            <div className='bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10'>
-                <p>Form here</p>
+            <div className='bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-20'>
+
+                <form action="">
+                    <Form
+                        //client={client}
+                    />
+
+                    <input 
+                        type="submit" 
+                        className='mt-5 w-full bg-blue-800 p-3 uppercase fond-bold text-white text-lg'
+                        value='Add Client'
+                    />
+                </form>
             </div>
         </>
     )
