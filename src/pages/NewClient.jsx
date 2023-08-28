@@ -1,5 +1,6 @@
-import { Form, useNavigate } from 'react-router-dom'
+import { Form, useNavigate, useActionData } from 'react-router-dom'
 import AddClientForm from '../components/AddClientForm'
+import Error from '../components/Error'
 
 export async function action({request}) {
     
@@ -7,14 +8,27 @@ export async function action({request}) {
 
     const data = Object.fromEntries(formData)
 
-    console.log(data)
-    //return null
+
+    //Validation
+    const errors = []
+    if(Object.values(data).includes('')) {
+        errors.push('All fields are mandatory.')
+    }
+
+    // Return data if there are errors:
+    if(Object.keys(errors).length) {
+        console.log('There are errors.')
+
+        return errors
+    }
 }
 
 const NewClient = () => {
 
+    const errors = useActionData()
     const navigate = useNavigate()
      
+    console.log(errors)
     return (
         <>
             <h1 className="font-black text-4xl text-blue-900">New Client</h1>
@@ -29,7 +43,7 @@ const NewClient = () => {
                 </button>
             </div>
             <div className='bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-20'>
-
+                {errors?.length && errors.map((error, i ) => <Error key={i}>{error}</Error> )}
                 <Form 
                     method="POST"
                 >
