@@ -1,9 +1,14 @@
 import { Form, useNavigate } from 'react-router-dom'
 import AddClientForm from '../components/AddClientForm'
 
-export function action() {
-    console.log('Submiting form..')
-    return null
+export async function action({request}) {
+    
+    const formData = await request.formData()
+
+    const data = Object.fromEntries(formData)
+
+    console.log(data)
+    //return null
 }
 
 const NewClient = () => {
