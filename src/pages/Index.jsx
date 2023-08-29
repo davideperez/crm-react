@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom"
 import Client from "../components/Client";
+import { getClients } from '../api/clients'
 
-export const loader = () => {
-  
-  const clients = [
+export const loader = () => {  
+ /*  const clients = [
     {
         id: 1,
         name: 'David',
@@ -39,7 +39,9 @@ export const loader = () => {
         email: "peter@owasp.com",
         company: 'OWASP'
     },
-];
+]; */
+
+  const clients = getClients()
 
   return clients
 }
