@@ -43,7 +43,7 @@ export const loader = () => {
 
   const clients = getClients()
 
-  return //clients
+  return clients
 }
 
 

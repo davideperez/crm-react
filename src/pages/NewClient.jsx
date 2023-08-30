@@ -1,23 +1,21 @@
-import { Form, useNavigate, useActionData } from 'react-router-dom'
+import { Form, useNavigate, useActionData, redirect } from 'react-router-dom'
 import AddClientForm from '../components/AddClientForm'
 import Error from '../components/Error'
+import { addClient } from '../api/clients.js'
 
 export async function action({request}) {
     
     const formData = await request.formData()
-
     const data = Object.fromEntries(formData)
-
     const email = formData.get('email')
 
-    
-    //Validates if all the fields are complete.
+    //1 Validates if all the fields are complete.
     const errors = []
     if(Object.values(data).includes('')) {
         errors.push('All fields are mandatory.')
     }
     
-    //Validates email
+    //2 Validates email
     
     let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
 
@@ -25,12 +23,16 @@ export async function action({request}) {
         errors.push('Email not valid.')
     }
 
-    // Return data if there are errors:
+    //3 Return data if there are errors:
     if(Object.keys(errors).length) {
         console.log('There are errors.')
 
         return errors
     }
+    //4 Send the request to the json-server api:
+    addClient(data)
+    
+    return redirect('/')
 }
 
 const NewClient = () => {
