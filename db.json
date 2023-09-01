@@ -1,36 +1,6 @@
 {
   "clients": [
     {
-      "name": "David Perez",
-      "company": "Facebook",
-      "email": "david@facebook.com",
-      "phone": "102013313",
-      "notes": "asd",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "name": "Karen",
-      "phone": 138198313,
-      "email": "karen@google.com",
-      "company": "Google"
-    },
-    {
-      "id": 3,
-      "name": "Joshua",
-      "phone": 31983913,
-      "email": "joshua@x.com",
-      "company": "X"
-    },
-    {
-      "name": "Michael Keaton",
-      "company": "Lnked-in",
-      "email": "michael@linkedin.com",
-      "phone": "319381983",
-      "notes": "asd",
-      "id": 4
-    },
-    {
       "name": "Peter Thiel",
       "company": "OWASP",
       "email": "peter@owasp.com",
