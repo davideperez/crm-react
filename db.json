@@ -1,11 +1,12 @@
 {
   "clients": [
     {
-      "id": 1,
-      "name": "David",
-      "phone": 102013313,
+      "name": "David Perez",
+      "company": "Facebook",
       "email": "david@facebook.com",
-      "company": "Facebook"
+      "phone": "102013313",
+      "notes": "asd",
+      "id": 1
     },
     {
       "id": 2,
@@ -22,18 +23,20 @@
       "company": "X"
     },
     {
-      "id": 4,
-      "name": "Michael",
-      "phone": 319381983,
+      "name": "Michael Keaton",
+      "company": "Lnked-in",
       "email": "michael@linkedin.com",
-      "company": "Lnked-in"
+      "phone": "319381983",
+      "notes": "asd",
+      "id": 4
     },
     {
-      "id": 5,
-      "name": "Peter",
-      "phone": 1398198938,
+      "name": "Peter Thiel",
+      "company": "OWASP",
       "email": "peter@owasp.com",
-      "company": "OWASP"
+      "phone": "1398198938",
+      "notes": "asd",
+      "id": 5
     },
     {
       "name": "Mark",
