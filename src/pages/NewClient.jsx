@@ -1,5 +1,5 @@
 import { Form, useNavigate, useActionData, redirect } from 'react-router-dom'
-import AddClientForm from '../components/AddClientForm'
+import ClientForm from '../components/ClientForm'
 import Error from '../components/Error'
 import { addClient } from '../api/clients.js'
 
@@ -60,7 +60,7 @@ const NewClient = () => {
                     method="POST"
                     noValidate 
                 >
-                    <AddClientForm
+                    <ClientForm
                         //client={client}
                     />
 

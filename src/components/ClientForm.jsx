@@ -1,4 +1,4 @@
-const AddClientForm = ({client}) => {
+const ClientForm = ({client}) => {
     return (
         <>
             <div className="mb-4">
@@ -12,6 +12,7 @@ const AddClientForm = ({client}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Name of the Client"
                     name="name"
+                    defaultValue={client?.name}
                 />
             </div>
 
@@ -26,6 +27,7 @@ const AddClientForm = ({client}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Client's company."
                     name="company"
+                    defaultValue={client?.company}
                 />
             </div>
 
@@ -40,6 +42,8 @@ const AddClientForm = ({client}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Client's email"
                     name="email"
+                    defaultValue={client?.email}
+
                 />
             </div>
 
@@ -54,6 +58,7 @@ const AddClientForm = ({client}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Client's phone"
                     name="phone"
+                    defaultValue={client?.phone}
                 />
             </div>
 
@@ -69,10 +74,11 @@ const AddClientForm = ({client}) => {
                     className="mt-2 block w-full p-3 bg-gray-50 h-40 align-self"
                     placeholder="Client's notes"
                     name="notes"
+                    defaultValue={client?.notes}
                 />
             </div>
         </>
     )
 }
 
-export default AddClientForm
+export default ClientForm

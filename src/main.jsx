@@ -25,7 +25,8 @@ const router = createBrowserRouter([
       {
         path: '/clients/new',
         element: <NewClient />,
-        action: newClientAction
+        action: newClientAction,
+        errorElement: <ErrorPage />
       },
       {
         path: '/clients/:clientId/edit',
